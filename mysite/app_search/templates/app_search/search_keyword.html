@@ -1,0 +1,31 @@
+{% extends 'app_search/base.html' %}
+{% load static %}
+   {% block title %} index{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Search Results</h1>
+        <div class="container">
+            <h1 class="jumbotron-heading">Job Detail</h1>
+            <div class="row">
+                {% for app in object_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="{{ job.image.url }}">
+                        <div class="card-body">
+                            <p class="lead text-muted">{{ app.app_name }}</p>
+                            <p class="lead text-muted">{{app.app_type }}</p>
+                            <img src="{{ app.app_icon.url }}" height="100" />
+                            <p class="lead text-muted">{{ app.developer_name }}</p>
+                            <p class="lead text-muted">{{ app.no_of_downloads }}</p>
+                            <p class="lead text-muted">{{ app.no_of_reviews}}</p>
+                            <p class="lead text-muted">{{ app.app_rating}}</p>
+                            <p class="lead text-muted">{{app.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
+        </div>
+</div>
+{% endblock %}

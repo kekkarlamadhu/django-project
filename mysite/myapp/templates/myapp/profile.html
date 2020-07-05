@@ -1,0 +1,16 @@
+{% extends 'myapp/base.html' %}
+    {% load static %}
+   {% block title %} login{% endblock %}
+
+
+{% block content %}
+
+<div class="wrapper">
+
+    <h1>Name - {{user.username }}</h1>
+    <img src="{{profile_form.prifile_image.image.url}}" alt="Smiley face" width="250" height="250">
+    <br />
+    <a href="{% url 'myapp:index' %}">Go Back!!!</a>
+</div>
+
+{% endblock %}

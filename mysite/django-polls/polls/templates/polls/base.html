@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>{% block title %}{% endblock %}</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+</head>
+<body>
+<nav>
+    {% include 'polls/navbar.html' %}
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>

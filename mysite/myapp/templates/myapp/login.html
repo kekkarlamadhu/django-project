@@ -1,0 +1,41 @@
+{% extends 'myapp/base.html' %}
+    {% load static %}
+   {% block title %} login{% endblock %}
+
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="title">Login Here</div>
+        <div class="social_media">
+            <div class="item">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="item">
+                <i class="fab fa-twitter"></i>
+            </div>
+            <div class="item">
+                <i class="fab fa-google-plus-g"></i>
+            </div>
+        </div>
+
+     <form class="site-form" action="{% url 'myapp:login' %}" method="post">
+         {% csrf_token %}
+        <div class="form">
+            <div class="input_field">
+
+                <input type="text" name="username" placeholder="Username" class="input">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <div class="input_field">
+                <input type="password" name="password" placeholder="Password" class="input">
+                <i class="fas fa-lock"></i>
+            </div>
+
+                <input type="submit" name="" value="Login">
+        </div>
+     </form>
+</div>
+
+{% endblock %}

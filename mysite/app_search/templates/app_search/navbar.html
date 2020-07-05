@@ -1,0 +1,35 @@
+
+
+
+{% block content %}
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">Applications</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Application
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{% url 'google' %}">Google play store</a>
+                            <a class="dropdown-item" href="#">Apple play store</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}" method="get">
+                <input name="q" type="text" placeholder="Search..."class="form-control mr-sm-2" type="search"  aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Get Details</button>
+            </form>
+        </div>
+    </nav>
+</div>
+{% endblock %}

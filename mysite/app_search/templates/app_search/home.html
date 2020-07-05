@@ -1,0 +1,30 @@
+
+{% extends 'app_search/base.html' %}
+{% load static %}
+   {% block title %} index{% endblock %}
+{% block content %}
+
+<main role="main">
+      <div class="album py-5 bg-light">
+        <div class="container">
+            <h1>Let's list all the Application</h1>
+            <div class="row">
+            {% for k in obj.all %}
+            <div class="col-md-4">
+                <a href="{% url 'app_details' k.id %}">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="{{ k.app_icon.url }}" height="250" >
+                        <div class="card-body">
+                            <p class="card-text">{{ k.app_name }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+                {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+
+{% endblock %}
+

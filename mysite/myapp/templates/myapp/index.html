@@ -1,0 +1,17 @@
+
+{% extends 'myapp/base.html' %}
+{% load static %}
+   {% block title %} index{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to the Village !</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+    {% else %}
+
+     <p><a href="{% url 'myapp:register' %}">Register </a> or <a href="{% url 'myapp:login' %}">login</a> if you'd like to.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% load static %}
+
+  {% block content %}
+<div id="main" >
+    <nav>
+
+            <a href="#"><img src="{% static 'images/logo5.png' %}" width="'300" height="80"></a>
+            <ul>
+                <li><a href="{% url 'myapp:index' %}">home</a> </li>
+                <li><a href="#">Gallery</a> </li>
+                <li><a href="#">Contact</a> </li>
+                <li><a href="#">About</a> </li>
+                <li><a href="#">Download</a> </li>
+
+                {% if user.is_authenticated %}
+                    <ul>
+                        <li><a href="#">dashboard</a></li>
+                        <li><a href="{% url 'myapp:profile' %}">profile</a> </li>
+                <li><a href="{% url 'myapp:logout' %}">logout</a> </li>
+                    </ul>
+
+
+                {% else%}
+                <li><a href="{% url 'myapp:login' %}">Login</a> </li>
+                <li><a href="{% url 'myapp:register' %}">Register</a> </li>
+                {% endif %}
+
+            </ul>
+
+        </nav>
+</div>
+  {% endblock %}
